@@ -12,7 +12,7 @@ import org.openqa.selenium.By;
 //import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import pageObject.Login_object;
+import pageObject.Loginobject;
 
 //import static io.appium.java_client.touch.TapOptions.tapOptions;
 //import static io.appium.java_client.touch.LongPressOptions.longPressOptions;
@@ -34,19 +34,21 @@ public class Ecom_tc_3 extends Ecom_basic {
 	     
 // screen 1 login
 		
-
-		Login_object login_object = new Login_object(driver);
-		login_object.login_namefield.sendKeys("HI");
+		
+		Loginobject l = new Loginobject(driver);
+		
+		l.login_namefield.sendKeys("HI");
 		driver.hideKeyboard();
-		login_object.login_Female.click();
-		login_object.login_countrydropdown.click();
+		l.login_Female.click();
+		l.login_countrydropdown.click();
 		
 		//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Argentina\"));");
 		Utilities util=new Utilities(driver);
 		util.scrollto("Argentina");	
-		login_object.login_selectcountry.click();
 		
-		login_object.login_Selectbtn.click();
+		l.login_selectcountry.click();
+		
+		l.login_Selectbtn.click();
 
 	
 /*		
@@ -63,6 +65,9 @@ public class Ecom_tc_3 extends Ecom_basic {
 		driver.findElement(By.xpath("//*[@text='Argentina']")).click();
 		driver.findElement(By.id("com.androidsample.generalstore:id/btnLetsShop")).click();
 */	  
+		
+		
+		
 		   
 // Screen 2 add to cart  
 	     driver.findElements(By.xpath("//*[@text='ADD TO CART']")).get(0).click();
